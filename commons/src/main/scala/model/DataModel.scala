@@ -20,8 +20,7 @@ object DataModel {
   * @param pay_product_ids
   * @param city_id
   */
-case class UserVisitAction (
-                             date: String,
+case class UserVisitAction (date: String,
                              user_id: Long,
                              session_id: String,
                              page_id: Long,
@@ -34,7 +33,6 @@ case class UserVisitAction (
                              pay_category_ids: String,
                              pay_product_ids: String,
                              city_id: Long
-
                            )
 
 
@@ -48,8 +46,7 @@ case class UserVisitAction (
   * @param city
   * @param sex
   */
-case class UserInfo (
-                      user_id: Long,
+case class UserInfo (user_id: Long,
                       username: String,
                       name: String,
                       age: Int,
@@ -69,3 +66,16 @@ case class ProductInfo (product_id: Long,
                         extend_info: String
                        )
 
+case class SessionRandomExtract(taskid: String,
+                                sessionid: String,
+                                startTime: String,
+                                searchKeywords: String,
+                                clickCategoryIds: String
+                               )
+
+case class Top10Category(taskid: String,
+                         categoryId: Long,
+                         clickCount: Long,
+                         orderCount: Long,
+                         payCount: Long
+                        )

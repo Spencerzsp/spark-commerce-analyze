@@ -59,4 +59,16 @@ public class DateUtils {
         return result;
     }
 
+    /**
+     * 获取年月日小时
+     * @param datetime
+     * @return (yyyy-MM-dd_HH)
+     */
+    public static String getDateHour(String datetime){
+        String date = datetime.split(" ")[0];
+        String hourMinuteSecond = datetime.split(" ")[1];
+        String hour = hourMinuteSecond.split(":")[0];
+
+        return date + "_" + hour;
+    }
 }

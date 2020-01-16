@@ -71,7 +71,8 @@ object MockDataGenerate {
     val searchKeywords = Array("华为手机", "联想笔记本", "小龙虾", "卫生纸", "吸尘器", "保温杯", "MacBook", "小米笔记本", "RedmiBook", "苹果耳机")
 
     //yyyy-MM-dd
-    val date = DataUtis.getTodayDate()
+//    val date = DataUtis.getTodayDate()
+    val date = DataUtis.getYesterdayDate()
 
     //关注四个行为: 搜索、点击、下单、付款
     val actions = Array("search", "click", "order", "pay")
