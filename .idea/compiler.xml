@@ -12,7 +12,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="commons" target="1.5" />
+      <module name="commons" target="1.6" />
       <module name="mock" target="1.5" />
       <module name="session" target="1.5" />
       <module name="spark-commerce-analyze" target="1.5" />

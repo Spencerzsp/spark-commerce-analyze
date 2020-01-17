@@ -4,12 +4,14 @@ import java.lang
 
 import conf.ConfigurationManager
 import constant.Constants
+import dao.IAdBlacklistDAO
+import dao.impl.AdBlacklistDAOImpl
+import model.AdBlacklist
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, LocationStrategies}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
-import utils.AdBlackListDAO
 
 object AdverStat {
 
@@ -50,22 +52,26 @@ object AdverStat {
     // String:timestap province city userid adid
     val adRealTimeValueDStream = adRealTimeDStream.map(item => item.value())
 
-    adRealTimeValueDStream.foreachRDD(rdd => rdd.foreach(println))
+//    adRealTimeValueDStream.foreachRDD(rdd => rdd.foreach(println))
 
     //transform算子关联DStram和RDD
     val adRealTimeFilterDStream = adRealTimeValueDStream.transform{
       logRDD =>
 
-        val blackListArray = AdBlackListDAO.findAll()
+        val adBlacklistDAOImpl = new AdBlacklistDAOImpl()
 
-        val userIdArray = blackListArray.map(item => item.userid)
+        //查找数据库中全部的黑名单
+        val blackList = adBlacklistDAOImpl.findAll()
 
+        //对当前点击广告的名单进行过滤
         logRDD.filter{
           case log =>
             val logSplit = log.split(" ")
             val userId = logSplit(3).toLong
-            !userIdArray.contains(userId)
+            !blackList.contains(userId)
         }
+
+        logRDD
 
     }
 

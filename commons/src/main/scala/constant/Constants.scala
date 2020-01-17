@@ -5,7 +5,7 @@ object Constants {
   /**
     * 项目配置的相关常量
     */
-  val JDBC_DRIVER = "com.mysql.jdbc.Driver"
+  val JDBC_DRIVER = "jdbc.driver"
   val JDBC_DATASOURCE_SIZE = "jdbc.datasource.size"
   val JDBC_URL = "jdbc.url"
   val JDBC_USER = "jdbc.user"
@@ -19,6 +19,8 @@ object Constants {
     */
   val SPARK_APP_NAME_SESSION = "UserVisitSessionAnalyzeSpark"
   val SPARK_APP_NAME_PAGE = "PageOneStepConvertRateSpark"
+
+  val SPARK_LOCAL = "spark.local"
 
   /**
     * user_visit_action,user_info,product_info表中字段对应的字段名常量

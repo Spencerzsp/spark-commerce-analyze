@@ -56,9 +56,8 @@ object MockRealTimeData {
         kafkaProducer.send(new ProducerRecord[String, String](topic, item))
       }
 
-      println("-------------------------------")
-
       Thread.sleep(5000)
+
     }
   }
 

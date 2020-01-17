@@ -1,4 +1,4 @@
-package com.wbbigdata.test
+package com.wbbigdata.service
 
 import constant.Constants
 import utils.{StringUtils, ValidUtils}
@@ -18,16 +18,16 @@ object TestDemo {
       "sex=female|" +
       "city=city94"
 
-    val filterInfo = "startAge=20|endAge=50|professionals=professional87|cities=|sex=|keywords=|categoryIds="
-
-    val fieldValue = StringUtils.getFieldFromConcatString(line, "\\|", "searchwords")
-    val fieldValue2 = StringUtils.getFieldFromConcatString(filterInfo, "\\|", "professionals")
-
-    println(fieldValue)
-    println(fieldValue2)
-
-    val bool = ValidUtils.in(line,"professional",filterInfo,Constants.PARAM_PROFESSIONALS)
-    println(bool)
+//    val filterInfo = "startAge=20|endAge=50|professionals=professional87|cities=|sex=|keywords=|categoryIds="
+//
+//    val fieldValue = StringUtils.getFieldFromConcatString(line, "\\|", "searchwords")
+//    val fieldValue2 = StringUtils.getFieldFromConcatString(filterInfo, "\\|", "professionals")
+//
+//    println(fieldValue)
+//    println(fieldValue2)
+//
+//    val bool = ValidUtils.in(line,"professional",filterInfo,Constants.PARAM_PROFESSIONALS)
+//    println(bool)
   }
 
 }
