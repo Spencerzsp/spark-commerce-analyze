@@ -53,6 +53,18 @@
             <classifier>jdk15</classifier><!-- 指定jdk版本 -->
         </dependency>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.44</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.3</version>
+        </dependency>
+
     </dependencies>
 
 

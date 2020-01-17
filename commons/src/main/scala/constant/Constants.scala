@@ -5,11 +5,13 @@ object Constants {
   /**
     * 项目配置的相关常量
     */
+  val JDBC_DRIVER = "com.mysql.jdbc.Driver"
   val JDBC_DATASOURCE_SIZE = "jdbc.datasource.size"
   val JDBC_URL = "jdbc.url"
   val JDBC_USER = "jdbc.user"
   val JDBC_PASSWORD = "jdbc.password"
 
+  val KAFKA_BROKERS = "kafka.broker.list"
   val KAFKA_TOPICS= "kafka.topics"
 
   /**

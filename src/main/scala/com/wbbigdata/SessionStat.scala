@@ -15,7 +15,7 @@ import scala.collection.mutable
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 import scala.util.Random
 
-object SessionStatistic {
+object SessionStat {
 
   def main(args: Array[String]): Unit = {
 

@@ -79,3 +79,22 @@ case class Top10Category(taskid: String,
                          orderCount: Long,
                          payCount: Long
                         )
+
+/**
+  * 广告黑名单
+  * @param userid
+  */
+case class AdBlacklist(userid: Long)
+
+/**
+  * 广告点击量
+  * @param date
+  * @param userid
+  * @param adid
+  * @param clickCount
+  */
+case class  adUserClickCount(date: String,
+                             userid: Long,
+                             adid: Long,
+                             clickCount: Long
+                            )
